@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Photography | About Us</title>
+    <meta name="description" content="Learn about Maya Photography - our story, skills, and passion for capturing life's precious moments">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="{{ url_for('static', filename='images/circle.png') }}" alt="Maya Photography" class="logo-img">
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/albums" class="nav-link">Albums</a></li>
+                    <li class="nav-item"><a href="/gallery" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="/blogs" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">About Maya Photography</h1>
+            <p class="hero-subtitle">Capturing life's beautiful moments with passion and creativity</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-container">
+                    <img src="{{ url_for('static', filename='images/about-photographer.jpg') }}" 
+                        data-src="{{ url_for('static', filename='images/about-photographer.jpg') }}"
+                        alt="Maya at work" 
+                        class="about-img"
+                        loading="lazy">
+                </div>
+                <div class="about-content">
+                    <div class="section-header">
+                        <h2 class="section-title">Our Story</h2>
+                        <p class="section-subtitle">A journey through the lens</p>
+                    </div>
+                    <p class="about-text">At Maya Photography, we believe photography is an art form that captures the essence of life's most precious moments. Our journey began with a passion for storytelling through the lens, transforming fleeting moments into timeless memories.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h3 class="feature-title">Our Skills</h3>
+                            <p class="feature-text">Mastering light, composition, and emotion to create stunning visuals with professional-grade results.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="feature-title">Our Experience</h3>
+                            <p class="feature-text">Over a decade of capturing weddings, corporate events, and personal milestones across India.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="feature-title">Our Work</h3>
+                            <p class="feature-text">Authentic and emotionally rich photography featured in publications and celebrated by clients.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="feature-title">Our Culture</h3>
+                            <p class="feature-text">Rooted in India's rich traditions, celebrating diversity through our lens with warmth and hospitality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="10">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="1200">0</div>
+                    <div class="stat-label">Photos Captured</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Events Covered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Hear from people we've worked with</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="{{ url_for('static', filename='images/client1.jpg') }}" alt="Client testimonial">
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Maya captured our wedding perfectly! The photos are stunning and truly reflect the emotions of our special day."</p>
+                        <h4 class="testimonial-author">Sarah & James</h4>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="{{ url_for('static', filename='images/client2.jpg') }}" alt="Client testimonial">
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Professional and creative. Our family portraits are beautiful and will be treasured for generations."</p>
+                        <h4 class="testimonial-author">The Johnson Family</h4>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <img src="{{ url_for('static', filename='images/client3.jpg') }}" alt="Client testimonial">
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The corporate photoshoot was exceptional. Maya understood our brand perfectly and delivered outstanding results."</p>
+                        <h4 class="testimonial-author">TechStart Inc.</h4>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Capture Your Special Moments?</h2>
+            <p class="cta-text">Contact us to discuss your photography needs and book your session.</p>
+            <div class="cta-btns">
+                <a href="/contact" class="btn btn-light">Get in Touch</a>
+                <a href="tel:+1234567890" class="btn btn-outline-light">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="{{ url_for('static', filename='images/circle.png') }}" alt="Maya Photography" class="footer-logo">
+                    <p class="footer-about">Capturing life's beautiful moments with creativity and passion.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/albums">Albums</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blogs">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Wedding Photography</a></li>
+                        <li><a href="#">Portrait Sessions</a></li>
+                        <li><a href="#">Commercial Photography</a></li>
+                        <li><a href="#">Event Coverage</a></li>
+                        <li><a href="#">Photo Editing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Photography St, City</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> contact@mayaphoto.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2023 Maya Photography. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+</body>
+</html>

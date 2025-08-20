@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Photography | {{ album.name | title }}</title>
+    <meta name="description" content="View our {{ album.name }} album - professional photography by Maya">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery_detail.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="{{ url_for('static', filename='images/circle.png') }}" alt="Maya Photography" class="logo-img">
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/albums" class="nav-link active">Albums</a></li>
+                    <li class="nav-item">
+                        <a href="/gallery" class="nav-link">Gallery</a>
+                       
+                    </li>
+                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="/blogs" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-btn">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">{{ album.name | title }}</h1>
+            <p class="hero-subtitle">{{ album.description }}</p>
+        </div>
+    </section>
+
+    <!-- Album Section -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{{ album.name | title }} Album</h2>
+                <p class="section-subtitle">{{ album.description }}</p>
+            </div>
+            
+            <div class="gallery-grid">
+                {% for image in album.images %}
+                <div class="gallery-item">
+                    <div class="gallery-img-container">
+                        <img src="{{ url_for('static', filename='images/albums/' + image) }}" 
+                             data-src="{{ url_for('static', filename='images/albums/' + image) }}"
+                             alt="{{ album.name }} photography" 
+                             class="gallery-img"
+                             loading="lazy"
+                             onerror="handleImageError(this)">
+                        <div class="gallery-overlay">
+                            <button class="view-btn" data-src="{{ url_for('static', filename='images/albums/' + image) }}">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% if not album.images %}
+            <p>No images available for this album.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal">
+        <div class="lightbox-content">
+            <span class="close-btn">&times;</span>
+            <img class="lightbox-img" src="" alt="">
+            <div class="lightbox-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="cta-title">Interested in Our Photography Services?</h2>
+            <p class="cta-text">Contact us to discuss your photography needs and book your session.</p>
+            <div class="cta-btns">
+                <a href="/contact" class="btn btn-light">Get in Touch</a>
+                <a href="tel:+1234567890" class="btn btn-outline-light">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="{{ url_for('static', filename='images/circle.png') }}" alt="Maya Photography" class="footer-logo">
+                    <p class="footer-about">Capturing life's beautiful moments with creativity and passion.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/albums">Albums</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/blogs">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Haldi & Mehndi Ceremony</a></li>
+                        <li><a href="#">Wedding Films</a></li>
+                        <li><a href="#">Birthday Celebrations</a></li>
+                        <li><a href="#">Pre Wedding</a></li>
+                        <li><a href="#">Roka Ceremony</a></li>
+                        <li><a href="#">Reception</a></li>
+                        <li><a href="#">Wedding</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Scf 68, Sector 15, Market (Basement Pnb), Sector 15, Faridabad, Haryana 121007, India</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope"></i> connect@themayapicture.in</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2023 Maya Photography. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/album_detail.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+*.db
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Other
+*.log
+# Project-specific
+temp/
+*.sql 
